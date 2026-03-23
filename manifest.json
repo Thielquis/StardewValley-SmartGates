@@ -1,0 +1,10 @@
+{
+  "Name": "Smart Gates",
+  "Author": "Thielquis",
+  "Version": "1.0.0",
+  "Description": "Smart Gate opening utility",
+  "UniqueID": "thielquis.smartgates",
+  "EntryDll": "smartgates.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": []
+}
