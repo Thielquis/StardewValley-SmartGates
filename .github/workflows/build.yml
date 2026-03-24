@@ -28,3 +28,14 @@ jobs:
               uses: Pathoschild/SMAPI-ModBuildWorkflow/upload-release-artifacts@v1
               with:
                   create_attestations: ${{github.ref == env.RELEASE_REF}}
+
+            - name: Upload to GitHub
+              uses: ncipollo/release-action@v1
+              if: github.ref_type == 'tag'
+              with:
+                  artifacts: '_releases/*.zip'
+                  name: 'Mod version ${{github.ref_name}}'
+                  body: |
+                      See [release notes][].
+            
+                      [release notes]: docs/release-notes.md#${{github.ref_name}}
