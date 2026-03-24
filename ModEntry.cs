@@ -77,11 +77,11 @@ namespace SmartGates {
         }
 
         private void OnWarped(object? sender, WarpedEventArgs e) {
-            this._gateDiscovery.CheckFencesAndGates(null, e);
+            this._gateDiscovery.CheckOnWarp(e);
         }
 
         private void OnObjectListChanged(object? sender, ObjectListChangedEventArgs e) {
-            this._gateDiscovery.CheckFencesAndGates(e, null);
+            this._gateDiscovery.CheckOnObjectsChanged(e);
         }
 
         private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e) {

@@ -29,9 +29,9 @@ namespace SmartGates.Framework {
             }
         }
 
-        public void CheckFencesAndGates(ObjectListChangedEventArgs? items = null, WarpedEventArgs? warp = null) {
+
+        public void CheckOnWarp(WarpedEventArgs? warp = null) {
             try {
-                // Handle warp first, since we can skip ObjectListChangedEvent in this case
                 if (warp != null) {
                     _fenceCache = new List<Vector2>();
                     foreach (KeyValuePair<Vector2, StardewValley.Object> pair in warp.NewLocation.objects.Pairs) {
@@ -46,7 +46,14 @@ namespace SmartGates.Framework {
                     }
                     return;
                 }
+            }
+            catch (Exception e) {
+                _monitor.Log($"Error in CheckGates - CheckOnWarp: {e}", LogLevel.Error);
+            }
+        }
 
+        public void CheckOnObjectsChanged(ObjectListChangedEventArgs? items = null) {
+            try {
                 if (items != null) {
                     foreach (KeyValuePair<Vector2, StardewValley.Object> pair in items.Removed) {
                         if (pair.Value is Fence fence) {
@@ -68,7 +75,7 @@ namespace SmartGates.Framework {
                 }
             }
             catch (Exception e) {
-                _monitor.Log($"Error in CheckGates: {e}", LogLevel.Error);
+                _monitor.Log($"Error in CheckGates - CheckOnObjectsChanged: {e}", LogLevel.Error);
             }
         }
 
