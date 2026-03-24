@@ -1,7 +1,8 @@
 **SmartGates** is a [Stardew Valley](http://stardewvalley.net/) mod which automatically opens gates in front of you
 
-Inspired by [AutoGate](https://www.nexusmods.com/stardewvalley/mods/820) and [Automatic Gates](https://www.nexusmods.com/stardewvalley/mods/3109)
-Both of these work slightly different, since they open gates even when you just walk by, not just in front of you. If you want this behaviour, check them out!
+Inspired by [AutoGate](https://www.nexusmods.com/stardewvalley/mods/820) and [Automatic Gates](https://www.nexusmods.com/stardewvalley/mods/3109) <br>
+Both of these work slightly different, since they open gates even when you just walk by, not just in front of you. <br>
+If you want this behaviour, check them out!
 
 Includes support for [Generic Mod Config Menu (GMCM)](https://www.nexusmods.com/stardewvalley/mods/5098)
 
@@ -12,7 +13,7 @@ Includes support for [Generic Mod Config Menu (GMCM)](https://www.nexusmods.com/
 3. Run the game using SMAPI.
 
 ## Compatibility
-Compatible with Stardew Valley 1.6+.
+Compatible with Stardew Valley 1.6+.<br>
 Tested in singleplayer, split-screen and online multiplayer.
 
 ## See also
