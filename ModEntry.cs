@@ -8,10 +8,10 @@ using xTile.Dimensions;
 namespace SmartGates {
 
     public class ModEntry : Mod {
-        private ModConfig config;
+        private ModConfig config = null!;
 
-        private GateManager _gateManager;
-        private GateDiscovery _gateDiscovery;
+        private GateManager _gateManager = null!;
+        private GateDiscovery _gateDiscovery = null!;
 
         private Vector2? _lastFrontTile;
 
@@ -25,9 +25,9 @@ namespace SmartGates {
             Helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
         }
 
-        private void OnGameLaunched(object sender, GameLaunchedEventArgs e) {
+        private void OnGameLaunched(object? sender, GameLaunchedEventArgs e) {
             // Config Menu
-            IGenericModConfigMenuApi configMenu = Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
+            IGenericModConfigMenuApi? configMenu = Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
             if (configMenu != null) {
                 configMenu.Register(
                     mod: ModManifest,
@@ -54,7 +54,7 @@ namespace SmartGates {
         }
 
 
-        private void OnSaveLoaded(object sender, EventArgs e) {
+        private void OnSaveLoaded(object? sender, EventArgs e) {
             base.Helper.Events.Player.Warped -= OnWarped;
             base.Helper.Events.World.ObjectListChanged -= OnObjectListChanged;
             base.Helper.Events.GameLoop.UpdateTicked -= OnUpdateTicked;
@@ -66,7 +66,7 @@ namespace SmartGates {
             base.Helper.Events.GameLoop.OneSecondUpdateTicked += OnOneSecondUpdateTicked;
         }
 
-        private void OnReturnedToTile(object sender, ReturnedToTitleEventArgs e) {
+        private void OnReturnedToTile(object? sender, ReturnedToTitleEventArgs e) {
             if (Game1.IsMultiplayer) {
                 return;
             }
@@ -76,15 +76,15 @@ namespace SmartGates {
             base.Helper.Events.GameLoop.OneSecondUpdateTicked -= OnOneSecondUpdateTicked;
         }
 
-        private void OnWarped(object sender, WarpedEventArgs e) {
+        private void OnWarped(object? sender, WarpedEventArgs e) {
             this._gateDiscovery.CheckFencesAndGates(null, e);
         }
 
-        private void OnObjectListChanged(object sender, ObjectListChangedEventArgs e) {
+        private void OnObjectListChanged(object? sender, ObjectListChangedEventArgs e) {
             this._gateDiscovery.CheckFencesAndGates(e, null);
         }
 
-        private void OnUpdateTicked(object sender, UpdateTickedEventArgs e) {
+        private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e) {
             if (!Context.IsWorldReady)
                 return;
 

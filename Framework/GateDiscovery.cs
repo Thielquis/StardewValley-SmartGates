@@ -29,7 +29,7 @@ namespace SmartGates.Framework {
             }
         }
 
-        public void CheckFencesAndGates(ObjectListChangedEventArgs items = null, WarpedEventArgs warp = null) {
+        public void CheckFencesAndGates(ObjectListChangedEventArgs? items = null, WarpedEventArgs? warp = null) {
             try {
                 // Handle warp first, since we can skip ObjectListChangedEvent in this case
                 if (warp != null) {

@@ -35,7 +35,7 @@ namespace SmartGates.Framework {
             try {
                 // Opening current Gate
                 if (currentMap.objects.ContainsKey(tile) && !_lastGates.Contains(tile)) {
-                    Fence currentGate = currentMap.objects[tile] as Fence;
+                    Fence? currentGate = currentMap.objects[tile] as Fence;
                     if (currentGate != null && currentGate.isGate.Value) {
                         int gatePosition = currentGate.gatePosition.Value;
                         if (gatePosition == 0)
@@ -52,7 +52,7 @@ namespace SmartGates.Framework {
                 for (int i = _lastGates.Count - 1; i >= 0; i--) {
                     Vector2 pos = _lastGates[i];
                     if (pos != playerPos && pos != tile) {
-                        Fence currentGate = currentMap.objects[pos] as Fence;
+                        Fence? currentGate = currentMap.objects[pos] as Fence;
                         key = (pos, currentMap);
                         if (currentGate != null && currentGate.isGate.Value) {
                             bool isNearGate = IsNearGate(currentFarmer, pos, currentGate);
@@ -100,7 +100,7 @@ namespace SmartGates.Framework {
 
         private void ClosingGate(Fence gate, Farmer currentFarmer, GameLocation map, (Vector2, GameLocation) key) {
             try {
-                if (!ManagedGates.TryGetValue(key, out ManagedGate state))
+                if (!ManagedGates.TryGetValue(key, out ManagedGate? state))
                     return;
 
                 gate.toggleGate(currentFarmer, false, false);
