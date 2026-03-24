@@ -21,10 +21,6 @@ jobs:
             - name: Add build environment
               uses: Pathoschild/SMAPI-ModBuildWorkflow/add-build-environment@v1
 
-            - name: Set prerelease versions
-              uses: Pathoschild/SMAPI-ModBuildWorkflow/set-prerelease-versions@v1
-              if: github.ref != env.RELEASE_REF
-
             - name: Build mods
               run: dotnet build --configuration Release
 
