@@ -38,7 +38,7 @@ jobs:
               if: github.ref_type == 'tag'
               with:
                   artifacts: '_releases/*.zip'
-                  name: 'Mod version ${{github.ref_name}}'
+                  name: '${{github.ref_name}}'
                   body: |
                       See [release notes][].
             
