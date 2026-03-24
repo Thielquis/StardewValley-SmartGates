@@ -1,11 +1,15 @@
 name: Build releases
-on: push
+on: 
+  push:
+    tags:
+    - '*'
 jobs:
     build:
         runs-on: ubuntu-latest
         permissions:
            id-token: write     # for attestation
            attestations: write # for attestation
+           contents: write     # for release
         env:
             RELEASE_REF: refs/heads/main # pushes to this branch are treated as public releases
         steps:
