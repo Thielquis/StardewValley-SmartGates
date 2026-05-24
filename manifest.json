@@ -3,8 +3,8 @@
   "Author": "Thielquis",
   "Version": "%ProjectVersion%",
   "Description": "Smart Gate opening utility",
-  "UniqueID": "thielquis.smartgates",
+  "UniqueID": "Thielquis.SmartGates",
   "EntryDll": "smartgates.dll",
   "MinimumApiVersion": "4.0.0",
-  "UpdateKeys": []
+  "UpdateKeys": [ "Nexus:44116" ]
 }
