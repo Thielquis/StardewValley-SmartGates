@@ -9,7 +9,7 @@ Includes support for [Generic Mod Config Menu (GMCM)](https://www.nexusmods.com/
 
 ## Install
 1. Install the newest version of SMAPI from [smapi.io](https://smapi.io/) or from [Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/2400)
-2. Install this mod from [Nexus Mods](https://www.nexusmods.com/TODO) or install manually from the release section.
+2. Install this mod from [Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/44116) or install manually from the release section.
 3. Run the game using SMAPI.
 
 ## Compatibility
@@ -18,4 +18,4 @@ Tested in singleplayer, split-screen and online multiplayer.
 
 ## See also
 * [Release notes](CHANGELOG.md)
-* [Nexus mod](https://www.nexusmods.com/TODO)
+* [Nexus mod](https://www.nexusmods.com/stardewvalley/mods/44116)
